@@ -13,13 +13,13 @@ namespace ProjetoEmpresa.Controllers
     {
         public EmpresasController()
         {
-
+            
         }
         // GET: Empresas
         public IActionResult Index()
         {
             IEnumerable<Empresa> empresas = null;
-            HttpResponseMessage response = OrigemDados.WebApiClient.GetAsync("empresas").Result;
+            HttpResponseMessage response = OrigemDados.WebApiClient.GetAsync("empresa").Result;
             empresas = response.Content.ReadAsAsync<IEnumerable<Empresa>>().Result;
             return View(empresas);
         }
